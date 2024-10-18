@@ -80,6 +80,11 @@ body[dark] {
 body[dyslexic] {
   font-family: OpenDyslexic;
 }
+@media (max-width: 62.5rem) {
+  body {
+    --fontFactor: 0.8;
+  }
+}
 
 * {
   margin: 0;
@@ -113,6 +118,7 @@ section:not(:is(:first-of-type, :last-of-type)) {
 
 header .container {
   display: flex;
+  flex-wrap: wrap;
   align-items: end;
   gap: 1em;
   margin-block: 0.5rem;
@@ -121,6 +127,17 @@ header .container {
 header .container:has(.header-contact-wrapper) {
   justify-content: space-between;
   align-items: center;
+}
+
+.accessibilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+@media screen and (max-width: 62.5rem) {
+  .accessibilities span {
+    width: 100%;
+  }
 }
 
 .btn {
@@ -192,9 +209,11 @@ header .container:has(.header-contact-wrapper) {
 
 .header-contact-wrapper {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 2rem;
-  justify-content: end;
+  margin-inline-start: auto;
+  justify-content: start;
 }
 .header-contact-wrapper .header-contact {
   display: flex;
@@ -216,6 +235,11 @@ header .container:has(.header-contact-wrapper) {
 }
 [dark] .header-contact-wrapper .header-contact {
   --_col: var(--lightColor);
+}
+@media screen and (max-width: 62.5rem) {
+  .header-contact-wrapper {
+    display: none;
+  }
 }
 
 a:not(:hover) {
@@ -281,6 +305,11 @@ body:not([dark]) .dropdown-menu {
   text-align: left; /* Applied on larger screens */
   grid-template-columns: 6fr 5fr;
 }
+@media screen and (max-width: 62.5rem) {
+  .heroContent {
+    grid-template-columns: 1fr;
+  }
+}
 .heroContent img {
   width: 100%;
   height: auto;
@@ -289,6 +318,11 @@ body:not([dark]) .dropdown-menu {
   object-position: top;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+}
+@media (max-width: 62.5rem) {
+  .heroContent img {
+    display: none;
+  }
 }
 @media (min-width: 1200px) {
   .heroContent > div:nth-child(1) {
@@ -1027,6 +1061,7 @@ body:not([dark]) .dropdown-menu {
 
 .d-flex {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .d-grid {
@@ -1129,6 +1164,11 @@ body:not([dark]) .hero-section .rating .rate-icon :is(i, i::before) {
   grid-template-columns: 4fr 5fr;
   gap: 2rem;
   place-items: center;
+}
+@media screen and (max-width: 62.5rem) {
+  .aboutGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .fw-bold {
@@ -1298,11 +1338,21 @@ h6 {
   gap: 1rem;
   place-items: center;
 }
+@media screen and (max-width: 62.5rem) {
+  .bookingGrid {
+    grid-template-columns: 1fr;
+  }
+}
 .bookingGrid .featureGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   box-sizing: border-box;
+}
+@media screen and (max-width: 62.5rem) {
+  .bookingGrid .featureGrid {
+    grid-template-columns: 1fr;
+  }
 }
 .bookingGrid .featureGrid .card {
   background-color: #fff;
@@ -1433,6 +1483,9 @@ section.bg-light {
     grid-template-columns: 1fr;
   }
 }
+.expertiseGrid > * {
+  max-width: calc(100vw - var(--inlineGap, 1rem) * 2);
+}
 .expertiseGrid img {
   width: 100%;
   height: auto;
@@ -1465,11 +1518,16 @@ body:not([dark]) .bxs-star {
   color: white;
 }
 
+.swiper-container {
+  overflow-y: visible;
+  overflow-x: hidden;
+}
+
 .swiper-slide {
   --_col: var(--darkColor);
-  box-shadow: 0px 0px 0px 1px var(--_col);
-  -webkit-box-shadow: 0px 0px 0px 1px var(--_col);
-  -moz-box-shadow: 0px 0px 0px 1px var(--_col);
+  box-shadow: inset 0px 0px 0px 1px var(--_col);
+  -webkit-box-shadow: inset 0px 0px 0px 1px var(--_col);
+  -moz-box-shadow: inset 0px 0px 0px 1px var(--_col);
   margin-bottom: 0.25rem;
 }
 [dark] .swiper-slide {
@@ -1544,7 +1602,8 @@ body:not([dark]) .bxs-star {
   font-weight: 500;
 }
 .accordion-collapse .accordion-body > * {
-  padding: 2rem;
+  padding-inline: 2rem;
+  padding-block-end: 2rem;
 }
 
 .footer-inner a:not(:hover) {
@@ -1612,6 +1671,11 @@ body:not([dark]) .bxs-star {
   padding-block: calc(var(--sectionGap) / 2);
   margin-block: calc(var(--sectionGap) / 2);
 }
+@media screen and (max-width: 62.5rem) {
+  .footerTopWrapper {
+    grid-template-columns: 1fr;
+  }
+}
 .footerTopWrapper ul {
   list-style: none;
 }
@@ -1624,6 +1688,11 @@ body:not([dark]) .bxs-star {
   display: grid;
   grid-template-columns: 4fr 5fr;
   gap: 2rem;
+}
+@media screen and (max-width: 62.5rem) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
 }
 .contactGrid h2 {
   margin-block-end: 1rem;

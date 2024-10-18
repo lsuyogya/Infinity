@@ -1,4 +1,5 @@
 @import './fontImport.scss';
+$breakpoint: calc(1000rem / 16);
 body {
   --primaryColor: #0eacc6;
   --primaryColorLighter: #{lighten(#0eacc6, 5%)};
@@ -29,8 +30,11 @@ body {
   &[dyslexic] {
     font-family: OpenDyslexic;
   }
-}
 
+  @media (max-width: $breakpoint) {
+    --fontFactor: 0.8;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -65,6 +69,7 @@ section:not(:is(:first-of-type, :last-of-type)) {
 
 header .container {
   display: flex;
+  flex-wrap: wrap;
   align-items: end;
   gap: 1em;
   margin-block: 0.5rem;
@@ -72,6 +77,16 @@ header .container {
 header .container:has(.header-contact-wrapper) {
   justify-content: space-between;
   align-items: center;
+}
+.accessibilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  @media screen and (max-width: $breakpoint) {
+    span {
+      width: 100%;
+    }
+  }
 }
 
 .btn {
@@ -153,9 +168,11 @@ header .container:has(.header-contact-wrapper) {
 
 .header-contact-wrapper {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 2rem;
-  justify-content: end;
+  margin-inline-start: auto;
+  justify-content: start;
   .header-contact {
     display: flex;
     align-items: center;
@@ -176,6 +193,9 @@ header .container:has(.header-contact-wrapper) {
     [dark] & {
       --_col: var(--lightColor);
     }
+  }
+  @media screen and (max-width: $breakpoint) {
+    display: none;
   }
 }
 
@@ -245,6 +265,9 @@ body:not([dark]) .dropdown-menu {
   justify-content: flex-start;
   text-align: left; /* Applied on larger screens */
   grid-template-columns: 6fr 5fr;
+  @media screen and (max-width: $breakpoint) {
+    grid-template-columns: 1fr;
+  }
   img {
     width: 100%;
     height: auto;
@@ -253,6 +276,9 @@ body:not([dark]) .dropdown-menu {
     object-position: top;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
+    @media (max-width: $breakpoint) {
+      display: none;
+    }
   }
   > div:nth-child(1) {
     @media (min-width: 1200px) {
@@ -360,6 +386,7 @@ $directions: '', 't', 'r', 'b', 'l', 'x', 'y'; // Directions for margin, padding
 
 .d-flex {
   display: flex;
+  flex-wrap: wrap;
 }
 .d-grid {
   display: grid;
@@ -460,6 +487,9 @@ body:not([dark]) .hero-section .rating .rate-icon :is(i, i::before) {
   grid-template-columns: 4fr 5fr;
   gap: 2rem;
   place-items: center;
+  @media screen and (max-width: $breakpoint) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .fw-bold {
@@ -617,6 +647,9 @@ h6 {
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   place-items: center;
+  @media screen and (max-width: $breakpoint) {
+    grid-template-columns: 1fr;
+  }
   .featureGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -627,6 +660,9 @@ h6 {
     //   box-sizing: border-box;
     //   height: 100%;
     // }
+    @media screen and (max-width: $breakpoint) {
+      grid-template-columns: 1fr;
+    }
     .card {
       background-color: #fff;
       border: 1px solid var(--lightColor);
@@ -741,6 +777,9 @@ section.bg-light {
   @media (max-width: 410px) {
     grid-template-columns: 1fr;
   }
+  > * {
+    max-width: calc(100vw - var(--inlineGap, 1rem) * 2);
+  }
   img {
     width: 100%;
     height: auto;
@@ -774,12 +813,16 @@ body:not([dark]) {
   color: white;
 }
 
+.swiper-container {
+  overflow-y: visible;
+  overflow-x: hidden;
+}
 .swiper-slide {
   // border-radius: 0.25rem;
   --_col: var(--darkColor);
-  box-shadow: 0px 0px 0px 1px var(--_col);
-  -webkit-box-shadow: 0px 0px 0px 1px var(--_col);
-  -moz-box-shadow: 0px 0px 0px 1px var(--_col);
+  box-shadow: inset 0px 0px 0px 1px var(--_col);
+  -webkit-box-shadow: inset 0px 0px 0px 1px var(--_col);
+  -moz-box-shadow: inset 0px 0px 0px 1px var(--_col);
   margin-bottom: 0.25rem;
   // padding-block: 0.25rem;
   [dark] & {
@@ -855,7 +898,8 @@ body:not([dark]) {
     font-size: 1.3rem;
     font-weight: 500;
     & > * {
-      padding: 2rem;
+      padding-inline: 2rem;
+      padding-block-end: 2rem;
     }
   }
 }
@@ -921,6 +965,9 @@ body:not([dark]) {
   border-block: 1px solid var(--borderColor);
   padding-block: calc(var(--sectionGap) / 2);
   margin-block: calc(var(--sectionGap) / 2);
+  @media screen and (max-width: $breakpoint) {
+    grid-template-columns: 1fr;
+  }
   ul {
     list-style: none;
   }
@@ -935,6 +982,9 @@ body:not([dark]) {
   display: grid;
   grid-template-columns: 4fr 5fr;
   gap: 2rem;
+  @media screen and (max-width: $breakpoint) {
+    grid-template-columns: 1fr;
+  }
   h2 {
     margin-block-end: 1rem;
     padding-block: 2rem;
