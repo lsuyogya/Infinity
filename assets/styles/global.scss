@@ -858,6 +858,9 @@ body:not([dark]) {
 }
 .footer-inner a:not(:hover) {
   color: #6d655c;
+  [dark] & {
+    color: var(--lightColor);
+  }
 }
 
 .footer-inner .social-links {
@@ -896,6 +899,9 @@ body:not([dark]) {
   font-size: calc(14rem / 16 * var(--fontFactor));
   line-height: 1.5;
   color: #777777;
+  [dark] & {
+    color: var(--lightColor);
+  }
 }
 
 .wp-block-image.is-style-rounded img {

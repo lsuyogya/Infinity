@@ -1493,6 +1493,9 @@ body:not([dark]) .bxs-star {
 .footer-inner a:not(:hover) {
   color: #6d655c;
 }
+[dark] .footer-inner a:not(:hover) {
+  color: var(--lightColor);
+}
 
 .footer-inner .social-links {
   text-align: right;
@@ -1531,6 +1534,9 @@ body:not([dark]) .bxs-star {
   font-size: calc(0.875rem * var(--fontFactor));
   line-height: 1.5;
   color: #777777;
+}
+[dark] .footer {
+  color: var(--lightColor);
 }
 
 .wp-block-image.is-style-rounded img {
