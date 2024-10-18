@@ -1525,13 +1525,20 @@ body:not([dark]) .bxs-star {
 
 .swiper-slide {
   --_col: var(--darkColor);
-  box-shadow: inset 0px 0px 0px 1px var(--_col);
-  -webkit-box-shadow: inset 0px 0px 0px 1px var(--_col);
-  -moz-box-shadow: inset 0px 0px 0px 1px var(--_col);
   margin-bottom: 0.25rem;
 }
 [dark] .swiper-slide {
   --_col: var(--lightColor);
+}
+.swiper-slide .shadowBorder {
+  box-shadow: inset 0px 0px 0px 1px var(--_col);
+  -webkit-box-shadow: inset 0px 0px 0px 1px var(--_col);
+  -moz-box-shadow: inset 0px 0px 0px 1px var(--_col);
+  flex-grow: 1;
+}
+.swiper-slide > div {
+  display: flex;
+  flex-direction: column;
 }
 
 .border-box {

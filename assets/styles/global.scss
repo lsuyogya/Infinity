@@ -820,13 +820,22 @@ body:not([dark]) {
 .swiper-slide {
   // border-radius: 0.25rem;
   --_col: var(--darkColor);
-  box-shadow: inset 0px 0px 0px 1px var(--_col);
-  -webkit-box-shadow: inset 0px 0px 0px 1px var(--_col);
-  -moz-box-shadow: inset 0px 0px 0px 1px var(--_col);
+
   margin-bottom: 0.25rem;
   // padding-block: 0.25rem;
   [dark] & {
     --_col: var(--lightColor);
+  }
+
+  .shadowBorder {
+    box-shadow: inset 0px 0px 0px 1px var(--_col);
+    -webkit-box-shadow: inset 0px 0px 0px 1px var(--_col);
+    -moz-box-shadow: inset 0px 0px 0px 1px var(--_col);
+    flex-grow: 1;
+  }
+  > div {
+    display: flex;
+    flex-direction: column;
   }
 }
 
