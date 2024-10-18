@@ -1,4 +1,4 @@
-// @import './prevTheme.scss';
+@import './fontImport.scss';
 body {
   --primaryColor: #0eacc6;
   --primaryColorLighter: #{lighten(#0eacc6, 5%)};
@@ -25,6 +25,9 @@ body {
     --textColor: var(--lightColor);
     --backgroundColor: var(--darkColor);
     --borderColor: var(--lightColor);
+  }
+  &[dyslexic] {
+    font-family: OpenDyslexic;
   }
 }
 
@@ -461,6 +464,9 @@ body:not([dark]) .hero-section .rating .rate-icon :is(i, i::before) {
 
 .fw-bold {
   font-weight: 700;
+}
+.fw-300 {
+  font-weight: 300;
 }
 
 .rounded-2 {
@@ -923,4 +929,41 @@ body:not([dark]) {
   > * > * {
     margin-block: calc(var(--sectionGap) / 2);
   }
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 4fr 5fr;
+  gap: 2rem;
+  h2 {
+    margin-block-end: 1rem;
+    padding-block: 2rem;
+    border-bottom: 1px solid var(--borderColor);
+  }
+  form {
+    padding-block: 0.25rem;
+    display: grid;
+    gap: 1rem;
+    input,
+    textarea,
+    select {
+      color: var(--darkColor);
+      [dark] & {
+        color: var(--lightColor);
+      }
+      font-family: inherit;
+      &::placeholder {
+        color: var(--darkColor);
+        [dark] & {
+          color: var(--lightColor);
+        }
+      }
+    }
+  }
+  button {
+    width: fit-content;
+  }
+}
+.align-items-center {
+  align-items: center;
 }

@@ -16,8 +16,11 @@ fontMinusBtn.addEventListener('click', () => {
     parseFloat(bodyStyles.getPropertyValue('--fontFactor').trim()) ?? 1;
   document.body.style.setProperty('--fontFactor', fontFactor - 0.1);
 });
-// TODO: Toggle Font
+
 const fontToggle = document.getElementById('fontToggle');
+fontToggle.addEventListener('click', () => {
+  document.body.toggleAttribute('dyslexic');
+});
 
 const refresh = document.getElementById('refresh');
 refresh.addEventListener('click', () => window.location.reload());
