@@ -91,6 +91,7 @@ body[dyslexic] {
   padding: 0;
   color: var(--textColor);
   background-color: var(--backgroundColor);
+  scroll-behavior: smooth;
 }
 
 p {
@@ -99,6 +100,14 @@ p {
 
 section:not(:is(:first-of-type, :last-of-type)) {
   margin-block: var(--sectionGap);
+}
+
+section:is(:first-of-type) {
+  margin-block-end: var(--sectionGap);
+}
+
+section:is(:last-of-type) {
+  margin-block-start: var(--sectionGap);
 }
 
 .mainGrid {
@@ -222,9 +231,9 @@ header .container:has(.header-contact-wrapper) {
   --_col: var(--primaryColor);
 }
 .header-contact-wrapper .header-contact i {
-  width: 1.28571429em;
+  max-width: 1.28571429em;
   text-align: center;
-  font-size: 2em;
+  font-size: 1.5em;
   color: var(--_col);
   border: 1px solid var(--_col);
   padding: 0.2em;
@@ -1077,10 +1086,10 @@ body:not([dark]) .dropdown-menu {
   display: inline-block;
 }
 
-.text-primary {
+.text-primary, .img-content .sub-title, .content-img .sub-title {
   color: var(--primaryColor);
 }
-[dark] .text-primary {
+[dark] .text-primary, [dark] .img-content .sub-title, [dark] .content-img .sub-title, .img-content [dark] .sub-title, .content-img [dark] .sub-title {
   color: var(--lightColor);
 }
 
@@ -1289,15 +1298,6 @@ h6 {
   height: 400px;
   cursor: pointer;
   /* padding-top: calc(100%*(370 / 658)); */
-}
-
-.video-container video {
-  /* position: absolute;
-  z-index: 0;
-  object-fit: cover;
-  width: 100%;
-  top: 0;
-  left: 0; */
 }
 
 .video-cover {
@@ -1752,13 +1752,15 @@ body:not([dark]) .bxs-star {
 section.bannerSmall {
   background-color: var(--primaryColor);
   color: var(--lightColor);
-  height: 40vh;
+  height: 30vh;
 }
 [dark] section.bannerSmall {
   background: var(--darkColor);
 }
 section.bannerSmall[hasImg] {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), var(--bgImg);
+  height: 40vh;
+  background-color: transparent;
+  background-image: linear-gradient(to top, rgba(14, 173, 198, 0.6), rgba(14, 173, 198, 0.9)), var(--bgImg);
   background-blend-mode: overlay;
   background-size: cover;
   background-position: var(--bgPosition, center);
@@ -1767,10 +1769,156 @@ section.bannerSmall[hasImg] {
   background-image: none;
   background-color: var(--darkColor);
 }
+section.bannerSmall[hasImg][hasParallax] {
+  background-attachment: fixed;
+}
 section.bannerSmall .container {
   display: grid;
   align-content: center;
   text-align: center;
+  max-width: 70ch;
+  justify-self: center;
+}
+
+.img-content, .content-img {
+  display: grid;
+  gap: 2rem;
+}
+@media (min-width: 62.5rem) {
+  .img-content, .content-img {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.img-content .title, .content-img .title {
+  letter-spacing: -1px;
+  text-transform: capitalize;
+}
+.img-content hr, .content-img hr {
+  margin-block: 1rem;
+  color: var(--borderColor);
+}
+.img-content p, .content-img p {
+  color: var(--darkColor);
+}
+[dark] .img-content p, [dark] .content-img p {
+  color: var(--lightColor);
+}
+.img-content ul, .content-img ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-block: 1rem;
+  list-style: none;
+}
+
+.imgWrapper {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.imgWrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+@media (min-width: 62.5rem) {
+  .imgWrapper.absolute {
+    position: relative;
+  }
+  .imgWrapper.absolute img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+section.bannerContent {
+  background-color: rgba(163, 207, 85, 0.6);
+  color: var(--darkColor);
+  min-height: 25vh;
+  padding-block: calc(var(--sectionGap) / 2);
+  display: grid;
+  place-content: center;
+  place-items: center;
+  text-align: center;
+}
+section.bannerContent .container {
+  max-width: 70ch;
+}
+section.bannerContent p {
+  font-weight: 600;
+  font-size: calc(clamp(1rem, 1rem + 0.25vw, 1.3rem) * var(--fontFactor));
+  line-height: 1.3;
+  margin-block: 1rem;
+}
+[dark] section.bannerContent {
+  background: var(--darkColor);
+  color: var(--lightColor);
+}
+section.bannerContent[hasImg] {
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), var(--bgImg);
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: var(--bgPosition, center);
+}
+[dark] section.bannerContent[hasImg] {
+  background-image: none;
+  background-color: var(--darkColor);
+}
+section.bannerContent[hasImg][hasParallax] {
+  background-attachment: fixed;
+}
+
+.content-only-center {
+  display: grid;
+  max-width: 70ch;
+  place-content: center;
+  place-items: center;
+  text-align: center;
+  justify-self: center;
+}
+.content-only-center hr {
+  margin-block: 1rem;
+  color: var(--borderColor);
+  width: 100%;
+}
+
+.galleryGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+@media (max-width: 400px) {
+  .galleryGrid {
+    grid-template-columns: 1fr;
+  }
+}
+.galleryGrid .grid-item {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.galleryGrid .grid-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: scale 300ms;
+}
+.galleryGrid .grid-item:hover img {
+  scale: 1.1;
+}
+
+.locationCardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+#google-map {
+  scroll-margin-top: 200px; /* Adjust this value to create your desired offset */
+  margin-block-start: 1rem;
 }
 
 /*# sourceMappingURL=global.css.map */

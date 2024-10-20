@@ -46,6 +46,15 @@
     <script src="https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax-video.min.js"></script>
 
     <title>Infinity Ability</title>
+
+    <!-- Fancybox CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.0/dist/fancybox/fancybox.css"
+    />
+
+    <!-- Fancybox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.0/dist/fancybox/fancybox.umd.js"></script>
   </head>
 
   <body data-bs-spy="scroll" data-bs-target="#mainNavbarTheme">
@@ -132,7 +141,7 @@
           <ul class="navbar-nav ml-xl-auto hidden">
             <li class="nav-item">
               <a
-                href="index.php"
+                href="index.html"
                 class="nav-link"
                 aria-haspopup="true"
                 aria-expanded="false"
@@ -141,7 +150,7 @@
             </li>
             <li class="nav-item">
               <a
-                href="about.php"
+                href="about.html"
                 class="nav-link"
                 aria-haspopup="true"
                 aria-expanded="false"
@@ -221,7 +230,7 @@
             </li>
             <li class="nav-item">
               <a
-                href="contact.html"
+                href="contact.php"
                 class="nav-link"
                 aria-haspopup="true"
                 aria-expanded="false"
@@ -240,22 +249,61 @@
     </header>
     <!--Main content-->
     <main>
-      <section
-        class="mainGrid bannerSmall"
-        hasImg
-        style="
-          --bgImg: url('https://infiniteability.com.au/wp-content/uploads/2020/06/background-img-3.jpg');
-          --bgPosition: 50% 30%;
-        "
-      >
-        <!-- <section
-        class="mainGrid bannerSmall"
-        style="
-          --bgImg: url('https://infiniteability.com.au/wp-content/uploads/2020/06/background-img-3.jpg');
-          --bgPosition: 50% 30%;
-        "> -->
+      <section class="mainGrid">
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            Fancybox.bind('[data-fancybox="gallery"]', {
+              // Optional custom options
+            });
+          });
+        </script>
         <div class="container">
-          <h1>New Intake Form</h1>
+          <div class="galleryGrid">
+            <div class="grid-item">
+              <a
+                href="https://infiniteability.com.au/wp-content/uploads/2020/06/weFocus.jpg"
+                data-fancybox="gallery"
+              >
+                <img
+                  src="https://infiniteability.com.au/wp-content/uploads/2020/06/weFocus.jpg"
+                  alt=""
+                />
+              </a>
+            </div>
+            <div class="grid-item">
+              <a
+                href="https://infiniteability.com.au/wp-content/uploads/2020/06/whatWeWant.jpg"
+                data-fancybox="gallery"
+              >
+                <img
+                  src="https://infiniteability.com.au/wp-content/uploads/2020/06/whatWeWant.jpg"
+                  alt=""
+                />
+              </a>
+            </div>
+            <div class="grid-item">
+              <a
+                href="https://infiniteability.com.au/wp-content/uploads/2020/06/ndis.jpg"
+                data-fancybox="gallery"
+              >
+                <img
+                  src="https://infiniteability.com.au/wp-content/uploads/2020/06/ndis.jpg"
+                  alt=""
+                />
+              </a>
+            </div>
+            <div class="grid-item">
+              <a
+                href="https://infiniteability.com.au/wp-content/uploads/2020/06/wel9.jpg"
+                data-fancybox="gallery"
+              >
+                <img
+                  src="https://infiniteability.com.au/wp-content/uploads/2020/06/wel9.jpg"
+                  alt=""
+                />
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
