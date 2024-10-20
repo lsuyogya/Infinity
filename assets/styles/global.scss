@@ -189,6 +189,7 @@ header .container:has(.header-contact-wrapper) {
     }
     h4 {
       color: var(--_col);
+      font-size: calc(1rem * var(--fontFactor));
     }
     [dark] & {
       --_col: var(--lightColor);
@@ -416,6 +417,10 @@ h5 {
 .h4,
 h4 {
   font-size: calc((1.275rem + 0.3vw) * var(--fontFactor));
+}
+.h1,
+h1 {
+  font-size: calc((1.75rem + 0.5vw) * var(--fontFactor));
 }
 .display-2 {
   font-size: calc(clamp(1.25rem, 1.25rem + 3vw, 4rem) * var(--fontFactor));
@@ -698,9 +703,9 @@ h6 {
 .fs-2 {
   font-size: calc((1.325rem + 0.9vw) * var(--fontFactor));
 }
-.fs-5 {
-  font-size: calc(1.25rem * var(--fontFactor));
-}
+// .fs-5 {
+//   font-size: calc(1.25rem * var(--fontFactor));
+// }
 .fw-semibold {
   font-weight: 600;
 }
@@ -1025,4 +1030,41 @@ body:not([dark]) {
 }
 .align-items-center {
   align-items: center;
+}
+
+#logo-footer,
+[class*='navbar-brand'] {
+  display: block;
+  width: auto;
+  height: calc(50rem / 16);
+}
+
+section.bannerSmall {
+  background-color: var(--primaryColor);
+  color: var(--lightColor);
+  height: 40vh;
+  [dark] & {
+    background: var(--darkColor);
+  }
+  &[hasImg] {
+    // background-color: transparent;
+    background-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0.6)
+      ),
+      var(--bgImg);
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: var(--bgPosition, center);
+    [dark] & {
+      background-image: none;
+      background-color: var(--darkColor);
+    }
+  }
+  .container {
+    display: grid;
+    align-content: center;
+    text-align: center;
+  }
 }
