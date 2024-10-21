@@ -1,5 +1,6 @@
 @import './fontImport.scss';
 $breakpoint: calc(1000rem / 16);
+
 body {
   --primaryColor: #0eacc6;
   --primaryColorLighter: #{lighten(#0eacc6, 5%)};
@@ -20,6 +21,7 @@ body {
     'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   max-width: 100vw;
+  overflow-x: hidden;
 
   &[dark] {
     --textColor: var(--lightColor);
@@ -40,6 +42,7 @@ body {
   color: var(--textColor);
   background-color: var(--backgroundColor);
   scroll-behavior: smooth;
+  // outline: 1px red solid;
 }
 p {
   line-height: 1.65;
@@ -87,7 +90,7 @@ header .container:has(.header-contact-wrapper) {
 .accessibilities {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem;
+  gap: 0.5rem;
   @media screen and (max-width: $breakpoint) {
     span {
       width: 100%;
@@ -223,6 +226,29 @@ a:not(:hover) {
   width: 100%;
   font-weight: 700;
   .nav-item {
+    &.dropdown {
+      position: relative;
+      padding-inline-end: 1.25rem;
+    }
+    &.dropdown:after {
+      background-image: none;
+      font-weight: 400;
+      font-family: boxicons !important;
+      content: '\ed91';
+      font-size: calc(0.75rem * var(--fontFactor));
+      color: currentColor;
+      align-items: center;
+      justify-content: center;
+      width: 1rem;
+      height: 1rem;
+      text-align: center;
+      line-height: 1;
+      box-sizing: content-box;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(calc(-50% + 0.2rem));
+    }
     .menuWrapper {
       position: relative;
       z-index: 1;
@@ -1009,11 +1035,15 @@ body:not([dark]) {
 .footerBottomWrapper {
   > * {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     // justify-content: space-between;
     > * {
       margin-block: calc(var(--sectionGap) / 2);
     }
+  }
+  img {
+    width: 10rem;
+    height: auto;
   }
 }
 
@@ -1138,7 +1168,7 @@ section.bannerSmall {
 .imgWrapper {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   img {
     display: block;
     width: 100%;
@@ -1184,13 +1214,14 @@ section.bannerContent {
     //     rgb(163, 207, 85, 0.6),
     background-image: linear-gradient(
         to top,
-        rgb(255, 255, 255, 0.4),
-        rgb(255, 255, 255, 0.4)
+        rgb(000, 000, 000, 0.4),
+        rgb(000, 000, 000, 0.4)
       ),
       var(--bgImg);
-    background-blend-mode: overlay;
-    // background-blend-mode: darken;
+    // background-blend-mode: overlay;
+    background-blend-mode: darken;
     background-size: cover;
+    color: var(--lightColor);
     background-position: var(--bgPosition, center);
     [dark] & {
       background-image: none;
@@ -1280,7 +1311,7 @@ section.bannerContent {
     max-width: 100vw;
     overflow: hidden;
     margin-block-end: 1rem;
-
+    height: auto;
     img {
       object-fit: cover;
       height: 100%;
@@ -1326,4 +1357,70 @@ a.readMore,
   top: 0;
   z-index: 20;
   // background-color: var(--lightColor);
+}
+
+.container:has(.contactGrid-formOnly) {
+  text-align: center;
+  p {
+    max-width: 70ch;
+    margin-inline: auto;
+  }
+}
+.contactGrid-formOnly {
+  @extend .contactGrid;
+  // grid-template-columns: 1fr;
+  // > * {
+  //   width: min(560px, 100%);
+  //   margin-inline: auto;
+  // }
+  button {
+    margin-inline: auto;
+  }
+}
+.rounded {
+  border-radius: 1rem;
+}
+.accessibilities .btn {
+  padding: 0.25rem;
+}
+.goog-te-gadget {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  > :first-child {
+    order: 1;
+  }
+  color: var(--lightColor) !important;
+  a {
+    color: var(--lightColor) !important;
+  }
+}
+
+header > div:has(#google_translate_element) {
+  color: var(--lightColor);
+  background-color: var(--darkColor);
+  .container {
+    justify-content: end;
+  }
+}
+.accessibilities .btn-primary {
+  color: var(--lightColor);
+  border: 1px solid transparent;
+  i {
+    scale: 1;
+    transition: scale 300ms;
+  }
+  &:hover {
+    background-color: transparent;
+    i {
+      scale: 1.1;
+    }
+  }
+}
+.enquireBtn {
+  position: fixed;
+  right: -3.85rem;
+  rotate: calc(90deg + 180deg);
+  top: 50%;
+  transform: translateY(-50%);
 }

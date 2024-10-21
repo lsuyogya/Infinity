@@ -232,104 +232,109 @@
                 class="bg-pattern text-primary mb-n2 mb-lg-n3 position-absolute translate-middle-x w-50 h-50 start-0 bottom-0"></div>
               <div class="bg-white position-relative rounded-4 overflow-hidden">
                 <!-- <small class="d-block mb-2 text-muted">No CC required</small> -->
-                <div class="title-top bg-primary px-4 py-4">
-                  <h4 class="mb-0 fw-bolder text-white text-center">
-                    Find Home Care in Your Area Today
-                  </h4>
+
+                <div
+                  class="bg-white position-relative rounded-4 overflow-hidden">
+                  <!-- <small class="d-block mb-2 text-muted">No CC required</small> -->
+                  <div class="title-top bg-primary px-4 py-4">
+                    <h4 class="mb-0 fw-bolder text-white text-center">
+                      Find Home Care in Your Area Today
+                    </h4>
+                  </div>
+
+                  <!--Signup form-->
+                  <form class="px-4 py-4 bg-light">
+                    <div class="mb-2">
+                      <label
+                        for="name"
+                        class="mb-1 fw-bold"
+                        >Name <sup class="text-danger">*</sup></label
+                      >
+                      <input
+                        type="text"
+                        placeholder=""
+                        class="form-control rounded-2 px-4"
+                        name="name"
+                        required />
+                    </div>
+                    <div class="mb-2">
+                      <label
+                        for="phone-no"
+                        class="mb-1 fw-bold"
+                        >Phone Number <sup class="text-danger">*</sup></label
+                      >
+                      <input
+                        type="text"
+                        placeholder=""
+                        class="form-control rounded-2 px-4"
+                        name="phone-no"
+                        required />
+                    </div>
+                    <div class="mb-2">
+                      <label
+                        for="email"
+                        class="mb-1 fw-bold"
+                        >Email <sup class="text-danger">*</sup></label
+                      >
+                      <input
+                        type="email"
+                        placeholder=""
+                        class="form-control rounded-2 px-4"
+                        name="email"
+                        required />
+                    </div>
+                    <div class="mb-2">
+                      <label
+                        for="post-code"
+                        class="mb-1 fw-bold"
+                        >Post Code where care is needed
+                        <sup class="text-danger">*</sup></label
+                      >
+                      <input
+                        type="text"
+                        placeholder=""
+                        class="form-control rounded-2 px-4"
+                        name="post-code"
+                        required />
+                    </div>
+                    <div class="mb-2">
+                      <label
+                        for="fund-types"
+                        class="mb-1 fw-bold"
+                        >Funding Types <sup class="text-danger">*</sup></label
+                      >
+                      <select
+                        name="fund-types"
+                        class="form-control rounded-2 px-4">
+                        <option value="">Select One</option>
+                        <option value="NDIS">NDIS</option>
+                        <option value="Home Care Package">
+                          Home Care Package
+                        </option>
+                        <option value="Private Pay">Private Pay</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                    <div class="mb-2">
+                      <label
+                        for="fund-types"
+                        class="mb-1 fw-bold"
+                        >What kind of care are you looking for?</label
+                      >
+                      <textarea
+                        name="care"
+                        class="form-control rounded-2 px-4"></textarea>
+                    </div>
+
+                    <div class="d-grid mt-4">
+                      <button
+                        type="button"
+                        class="btn btn-primary btn-fill rounded-pill hover-shadow btn-hover-arrow hover-lift btn-lg">
+                        <span>Get your free Consultation</span>
+                      </button>
+                    </div>
+                  </form>
                 </div>
-
-                <!--Signup form-->
-                <form class="px-4 py-4 bg-light">
-                  <div class="mb-2">
-                    <label
-                      for="name"
-                      class="mb-1 fw-bold"
-                      >Name <sup class="text-danger">*</sup></label
-                    >
-                    <input
-                      type="text"
-                      placeholder=""
-                      class="form-control rounded-2 px-4"
-                      name="name"
-                      required />
-                  </div>
-                  <div class="mb-2">
-                    <label
-                      for="phone-no"
-                      class="mb-1 fw-bold"
-                      >Phone Number <sup class="text-danger">*</sup></label
-                    >
-                    <input
-                      type="text"
-                      placeholder=""
-                      class="form-control rounded-2 px-4"
-                      name="phone-no"
-                      required />
-                  </div>
-                  <div class="mb-2">
-                    <label
-                      for="email"
-                      class="mb-1 fw-bold"
-                      >Email <sup class="text-danger">*</sup></label
-                    >
-                    <input
-                      type="email"
-                      placeholder=""
-                      class="form-control rounded-2 px-4"
-                      name="email"
-                      required />
-                  </div>
-                  <div class="mb-2">
-                    <label
-                      for="post-code"
-                      class="mb-1 fw-bold"
-                      >Post Code where care is needed
-                      <sup class="text-danger">*</sup></label
-                    >
-                    <input
-                      type="text"
-                      placeholder=""
-                      class="form-control rounded-2 px-4"
-                      name="post-code"
-                      required />
-                  </div>
-                  <div class="mb-2">
-                    <label
-                      for="fund-types"
-                      class="mb-1 fw-bold"
-                      >Funding Types <sup class="text-danger">*</sup></label
-                    >
-                    <select
-                      name="fund-types"
-                      class="form-control rounded-2 px-4">
-                      <option value="">Select One</option>
-                      <option value="NDIS">NDIS</option>
-                      <option value="Home Care Package">
-                        Home Care Package
-                      </option>
-                      <option value="Private Pay">Private Pay</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
-                  <div class="mb-2">
-                    <label
-                      for="fund-types"
-                      class="mb-1 fw-bold"
-                      >What kind of care are you looking for?</label
-                    >
-                    <textarea
-                      name="care"
-                      class="form-control rounded-2 px-4"></textarea>
-                  </div>
-
-                  <div class="d-grid mt-4">
-                    <button
-                      type="button"
-                      class="btn btn-primary btn-fill rounded-pill hover-shadow btn-hover-arrow hover-lift btn-lg">
-                      <span>Get your free Consultation</span>
-                    </button>
-                  </div>
-                </form>
               </div>
               <!-- <img src="assets/img/960x1140/4.jpg"
                             class="img-fluid shadow-lg rounded-block rounded-top-start-0 rounded-bottom-end-0 position-relative" alt=""> -->
@@ -618,7 +623,7 @@
               </div>
               <!--Section Heading-->
               <h2
-                class="mb-2 display-3"
+                class="mb-2 display-4"
                 data-aos="fade-up"
                 data-aos-delay="100">
                 Our Services
@@ -631,174 +636,242 @@
             </div>
           </div>
 
-          <div class="expertiseGrid">
+          <div class="servicesGrid">
             <div
-              class=""
+              class="serviceCard"
               data-aos="fade-up">
               <!--Service image-->
-              <img
-                src="assets/img/services/1.jpg"
-                class="img-fluid mb-5 rounded-5 shadow-lg"
-                alt="service" />
-              <!--title-->
-              <h4 class="mb-4 fw-bold">Home and community support</h4>
-              <!--text-->
-              <p class="mb-5">
-                Infinite Ability helps people with disabilities engage in
-                community activities, building confidence and social connections
-                through tailored support and recreational programs.
-              </p>
+              <div class="imgWrapper">
+                <img
+                  src="assets/img/services/1.jpg"
+                  class="img-fluid mb-5 rounded-5 shadow-lg"
+                  alt="service" />
+              </div>
+              <div class="txtWrapper">
+                <!--title-->
+                <a href="service.html">
+                  <h2 class="mb-4 fw-bold">Home and community support</h2>
+                </a>
+                <!--text-->
+                <div class="content">
+                  <p class="mb-5">
+                    Infinite Ability helps people with disabilities engage in
+                    community activities, building confidence and social
+                    connections through tailored support and recreational
+                    programs.
+                  </p>
+                </div>
+              </div>
             </div>
             <div
-              class=""
+              class="serviceCard"
               data-aos="fade-right"
               data-aos-delay="100">
               <!--Service image-->
-              <img
-                src="assets/img/services/2.jpg"
-                class="img-fluid mb-5 rounded-5 shadow-lg"
-                alt="service" />
-              <!--Title-->
-              <h4 class="mb-4 fw-bold">Support Coordination</h4>
-              <!--Text-->
-              <p class="mb-5">
-                Infinite Ability provides NDIS Support Coordination and Recovery
-                Coaching to help participants achieve their goals and foster
-                independence. Contact us for more information.
-              </p>
+              <div class="imgWrapper">
+                <img
+                  src="assets/img/services/2.jpg"
+                  class="img-fluid mb-5 rounded-5 shadow-lg"
+                  alt="service" />
+              </div>
+              <div class="txtWrapper">
+                <!--Title-->
+                <a href="service.html">
+                  <h2>Support Coordination</h2>
+                </a>
+                <!--Text-->
+                <div class="content">
+                  <p class="mb-5">
+                    Infinite Ability provides NDIS Support Coordination and
+                    Recovery Coaching to help participants achieve their goals
+                    and foster independence. Contact us for more information.
+                  </p>
+                </div>
+              </div>
             </div>
             <div
-              class=""
+              class="serviceCard"
               data-aos="fade-right"
               data-aos-delay="150">
               <!--Service image-->
-              <img
-                src="assets/img/services/4.jpg"
-                class="img-fluid mb-5 rounded-5 shadow-lg"
-                alt="service" />
+              <div class="imgWrapper">
+                <img
+                  src="assets/img/services/4.jpg"
+                  class="img-fluid mb-5 rounded-5 shadow-lg"
+                  alt="service" />
+              </div>
               <!--Title-->
-              <h4 class="mb-4 fw-bold">Life Skill Development</h4>
-              <!--Text-->
-              <p class="mb-5">
-                Infinite Ability provides personal care and life skills support
-                for individuals with disabilities, fostering confidence and
-                independence. Contact us for assistance.
-              </p>
+              <div class="txtWrapper">
+                <a href="service.html">
+                  <h2>Life Skill Development</h2>
+                </a>
+                <!--Text-->
+                <div class="content">
+                  <p class="mb-5">
+                    Infinite Ability provides personal care and life skills
+                    support for individuals with disabilities, fostering
+                    confidence and independence. Contact us for assistance.
+                  </p>
+                </div>
+              </div>
             </div>
             <div
-              class=""
+              class="serviceCard"
               data-aos="fade-right"
               data-aos-delay="200">
               <!--Service image-->
-              <img
-                src="assets/img/services/6.jpg"
-                class="img-fluid mb-5 rounded-5 shadow-lg image-height"
-                alt="service" />
+              <div class="imgWrapper">
+                <img
+                  src="assets/img/services/6.jpg"
+                  class="img-fluid mb-5 rounded-5 shadow-lg image-height"
+                  alt="service" />
+              </div>
               <!--Title-->
-              <h4 class="mb-4 fw-bold">Group, recreation and Leisure</h4>
-              <!--Text-->
-              <p class="mb-5">
-                Infinite Ability offers varieties of capacity building, social,
-                creative and active leisure group that can help you find new
-                friendships and learn new skills. We offer Centre based and
-                outdoor activities.
-              </p>
+              <div class="txtWrapper">
+                <a href="service.html">
+                  <h2>Group, recreation and Leisure</h2>
+                </a>
+                <!--Text-->
+                <div class="content">
+                  <p class="mb-5">
+                    Infinite Ability offers varieties of capacity building,
+                    social, creative and active leisure group that can help you
+                    find new friendships and learn new skills. We offer Centre
+                    based and outdoor activities.
+                  </p>
+                </div>
+              </div>
             </div>
             <div
-              class=""
+              class="serviceCard"
               data-aos="fade-right"
               data-aos-delay="250">
               <!--Service image-->
-              <img
-                src="assets/img/services/5.jpg"
-                class="img-fluid mb-5 rounded-5 shadow-lg image-height"
-                alt="service" />
+              <div class="imgWrapper">
+                <img
+                  src="assets/img/services/5.jpg"
+                  class="img-fluid mb-5 rounded-5 shadow-lg image-height"
+                  alt="service" />
+              </div>
               <!--Title-->
-              <h4 class="mb-4 fw-bold">Transport</h4>
-              <!--Text-->
-              <p class="mb-5">
-                We are here to provide you with transport facilities as per the
-                NDIS to overcome your daily transportation challenges.
-              </p>
+              <div class="txtWrapper">
+                <a href="service.html">
+                  <h2>Transport</h2>
+                </a>
+                <!--Text-->
+                <div class="content">
+                  <p class="mb-5">
+                    We are here to provide you with transport facilities as per
+                    the NDIS to overcome your daily transportation challenges.
+                  </p>
+                </div>
+              </div>
             </div>
             <div
-              class=""
+              class="serviceCard"
               data-aos="fade-right"
               data-aos-delay="300">
               <!--Service image-->
-              <img
-                src="assets/img/services/3.jpg"
-                class="img-fluid mb-5 rounded-5 shadow-lg image-height"
-                alt="service" />
-              <!--Title-->
-              <h4 class="mb-4 fw-bold">
-                Assist with you independence travel and transport
-              </h4>
-              <!--Text-->
-              <p class="mb-5">
-                We assist you to develop the skills you can travel and use
-                public transport independently.
-              </p>
+              <div class="imgWrapper">
+                <img
+                  src="assets/img/services/3.jpg"
+                  class="img-fluid mb-5 rounded-5 shadow-lg image-height"
+                  alt="service" />
+              </div>
+              <div class="txtWrapper">
+                <!--Title-->
+                <a href="service.html">
+                  <h2>Assist with you independence travel and transport</h2>
+                </a>
+                <!--Text-->
+                <div class="content">
+                  <p class="mb-5">
+                    We assist you to develop the skills you can travel and use
+                    public transport independently.
+                  </p>
+                </div>
+              </div>
             </div>
             <div
-              class=""
+              class="serviceCard"
               data-aos="fade-right"
               data-aos-delay="350">
               <!--Service image-->
-              <img
-                src="assets/img/services/7.jpg"
-                class="img-fluid mb-5 rounded-5 shadow-lg image-height"
-                alt="service" />
-              <!--Title-->
-              <h4 class="mb-4 fw-bold">
-                Participation in Education, Training and Employment
-              </h4>
-              <!--Text-->
-              <p class="mb-5">
-                We help you to discover your abilities assisting you School,
-                UNI, TAFE and find volunteers or paid job. We assist you to link
-                you in mainstream services.
-              </p>
+              <div class="imgWrapper">
+                <img
+                  src="assets/img/services/7.jpg"
+                  class="img-fluid mb-5 rounded-5 shadow-lg image-height"
+                  alt="service" />
+              </div>
+              <div class="txtWrapper">
+                <a href="service.html">
+                  <h2>Participation in Education, Training and Employment</h2>
+                </a>
+                <!--Title-->
+                <!--Text-->
+                <div class="content">
+                  <p class="mb-5">
+                    We help you to discover your abilities assisting you School,
+                    UNI, TAFE and find volunteers or paid job. We assist you to
+                    link you in mainstream services.
+                  </p>
+                </div>
+              </div>
             </div>
             <div
-              class=""
+              class="serviceCard"
               data-aos="fade-right"
               data-aos-delay="400">
               <!--Service image-->
-              <img
-                src="assets/img/services/8.jpg"
-                class="img-fluid mb-5 rounded-5 shadow-lg image-height"
-                alt="service" />
+              <div class="imgWrapper">
+                <img
+                  src="assets/img/services/8.jpg"
+                  class="img-fluid mb-5 rounded-5 shadow-lg image-height"
+                  alt="service" />
+              </div>
               <!--Title-->
-              <h4 class="mb-4 fw-bold">
-                Short Term Accommodation and Assistance
-              </h4>
-              <!--Text-->
-              <p class="mb-5">
-                We Offer Short Term Accommodation and Assistance for NDIS
-                participants as per the need of these individuals and their
-                families. Our short- term accommodation services are a home away
-                from home for people with a disability.
-              </p>
+              <div class="txtWrapper">
+                <a href="service.html">
+                  <h2>Short Term Accommodation and Assistance</h2>
+                </a>
+                <!--Text-->
+                <div class="content">
+                  <p class="mb-5">
+                    We Offer Short Term Accommodation and Assistance for NDIS
+                    participants as per the need of these individuals and their
+                    families. Our short- term accommodation services are a home
+                    away from home for people with a disability.
+                  </p>
+                </div>
+              </div>
             </div>
             <div
-              class=""
+              class="serviceCard"
               data-aos="fade-right"
               data-aos-delay="400">
               <!--Service image-->
-              <img
-                src="assets/img/services/9.jpg"
-                class="img-fluid mb-5 rounded-5 shadow-lg image-height"
-                alt="service" />
-              <!--Title-->
-              <h4 class="mb-4 fw-bold">Supported Independent Living (SIL)</h4>
-              <!--Text-->
-              <p class="mb-5">
-                We offer Longer term Accommodation and Assistance for
-                Participants. Infinite Ability Provides Supported Independent
-                Living (SIL) supports at Participant’s home or in our
-                facilities.
-              </p>
+              <div class="imgWrapper">
+                <img
+                  src="assets/img/services/9.jpg"
+                  class="img-fluid mb-5 rounded-5 shadow-lg image-height"
+                  alt="service" />
+              </div>
+              <div class="txtWrapper">
+                <!--Title-->
+                <a href="service.html">
+                  <h2>Supported Independent Living (SIL)</h2>
+                </a>
+
+                <!--Text-->
+                <div class="content">
+                  <p class="mb-5">
+                    We offer Longer term Accommodation and Assistance for
+                    Participants. Infinite Ability Provides Supported
+                    Independent Living (SIL) supports at Participant’s home or
+                    in our facilities.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -984,7 +1057,7 @@
           <div class="row">
             <div class="col-md-12 col-lg-12 mb-7 mb-md-0 me-auto">
               <div class="position-relative text-center">
-                <h2 class="display-3 mb-4">Frequently Asked Question</h2>
+                <h2 class="display-4 mb-4">Frequently Asked Question</h2>
                 <p class="mb-5 lead w-lg-90">Your Questions, Answered</p>
               </div>
             </div>
@@ -1160,7 +1233,7 @@
           <div class="row">
             <div class="col-md-12 col-lg-12 mb-7 mb-md-0 me-auto">
               <div class="position-relative h-100">
-                <h2 class="display-3 mb-4">Contact us</h2>
+                <h2 class="display-4 mb-4">Contact us</h2>
                 <p class="mb-5 lead w-lg-90">
                   It would be great to hear from you! Just drop us a line and
                   ask for anything with which you think we could be helpful. We
@@ -1441,7 +1514,7 @@
               <div
                 id="block-5"
                 class="footer-content sidebar-widget widget_block widget_text">
-                <p>Acknowledgement:</p>
+                <!-- <p>Acknowledgement:</p> -->
                 <p>
                   We acknowledge the traditional custodians of this land and we
                   pay our respects to the Elders past, present and emerging, for
