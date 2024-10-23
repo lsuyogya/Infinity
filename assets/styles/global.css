@@ -270,6 +270,10 @@ a:not(:hover) {
   width: 100%;
   font-weight: 700;
 }
+.navbar-nav .nav-item {
+  --_navItemPadding: 1rem;
+  padding: 1rem;
+}
 .navbar-nav .nav-item.dropdown {
   position: relative;
   padding-inline-end: 1.25rem;
@@ -309,6 +313,7 @@ a:not(:hover) {
   list-style: none;
   z-index: 1;
   position: absolute;
+  top: calc(var(--_navItemPadding));
   padding: var(--_padding);
   min-width: calc(200px + var(--_padding) * 2);
   display: grid;
@@ -318,6 +323,13 @@ a:not(:hover) {
 }
 [dark] .navbar-nav .nav-item .dropdown-menu {
   box-shadow: inset 0 0 2px var(--borderColor);
+}
+.navbar-nav .nav-item .dropdown-menu.bg-primary {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+}
+.navbar-nav .nav-item .dropdown-menu.bg-primary * {
+  background-color: transparent;
 }
 .navbar-nav a {
   transition: color 300ms;
@@ -1269,7 +1281,7 @@ label {
   background-color: var(--darkColor);
 }
 
-body:not([dark]) .bg-light {
+body:not([dark]) .bg-light, body:not([dark]) main:has(section:last-child:not(.bg-light)) + footer {
   background-color: #faf9fe;
 }
 
@@ -1799,7 +1811,7 @@ body:not([dark]) .bxs-star {
 }
 
 section.bannerSmall {
-  background-color: var(--primaryColor);
+  background-color: rgba(14, 173, 198, 0.6);
   color: var(--lightColor);
   min-height: 30vh;
   padding: 1rem;
@@ -1809,9 +1821,8 @@ section.bannerSmall {
 }
 section.bannerSmall[hasImg] {
   min-height: 40vh;
-  background-color: transparent;
-  background-image: linear-gradient(to top, rgba(14, 173, 198, 0.6), rgba(14, 173, 198, 0.9)), var(--bgImg);
-  background-blend-mode: overlay;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), var(--bgImg);
+  background-blend-mode: darken;
   background-size: cover;
   background-position: var(--bgPosition, center);
 }
@@ -2098,6 +2109,10 @@ header > div:has(#google_translate_element) .container {
   rotate: 270deg;
   top: 50%;
   transform: translateY(-50%);
+}
+
+main:has(section:last-child:not(.bg-light)) + footer {
+  margin-block-start: var(--sectionGap);
 }
 
 /*# sourceMappingURL=global.css.map */
