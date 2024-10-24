@@ -1447,3 +1447,16 @@ main:has(section:last-child:not(.bg-light)) + footer {
   @extend .bg-light;
   margin-block-start: var(--sectionGap);
 }
+
+.videoSection {
+  display: grid;
+  gap: 2rem;
+  place-content: center;
+  place-items: center;
+  @media screen and (min-width: $breakpoint) {
+    grid-template-columns: 1fr auto;
+  }
+  ul {
+    list-style-position: inside;
+  }
+}

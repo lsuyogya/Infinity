@@ -2115,4 +2115,19 @@ main:has(section:last-child:not(.bg-light)) + footer {
   margin-block-start: var(--sectionGap);
 }
 
+.videoSection {
+  display: grid;
+  gap: 2rem;
+  place-content: center;
+  place-items: center;
+}
+@media screen and (min-width: 62.5rem) {
+  .videoSection {
+    grid-template-columns: 1fr auto;
+  }
+}
+.videoSection ul {
+  list-style-position: inside;
+}
+
 /*# sourceMappingURL=global.css.map */
